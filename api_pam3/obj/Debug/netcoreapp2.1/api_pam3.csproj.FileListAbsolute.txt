@@ -12,3 +12,17 @@ C:\Users\gabrielle\Desktop\api_pam3\api_pam3\obj\Debug\netcoreapp2.1\api_pam3.As
 C:\Users\gabrielle\Desktop\api_pam3\api_pam3\obj\Debug\netcoreapp2.1\api_pam3.RazorTargetAssemblyInfo.cache
 C:\Users\gabrielle\Desktop\api_pam3\api_pam3\obj\Debug\netcoreapp2.1\api_pam3.dll
 C:\Users\gabrielle\Desktop\api_pam3\api_pam3\obj\Debug\netcoreapp2.1\api_pam3.pdb
+C:\Users\gabrielle\Downloads\Web-Api-Nba-Data-master\api_pam3\bin\Debug\netcoreapp2.1\api_pam3.deps.json
+C:\Users\gabrielle\Downloads\Web-Api-Nba-Data-master\api_pam3\bin\Debug\netcoreapp2.1\api_pam3.runtimeconfig.json
+C:\Users\gabrielle\Downloads\Web-Api-Nba-Data-master\api_pam3\bin\Debug\netcoreapp2.1\api_pam3.runtimeconfig.dev.json
+C:\Users\gabrielle\Downloads\Web-Api-Nba-Data-master\api_pam3\bin\Debug\netcoreapp2.1\api_pam3.dll
+C:\Users\gabrielle\Downloads\Web-Api-Nba-Data-master\api_pam3\bin\Debug\netcoreapp2.1\api_pam3.pdb
+C:\Users\gabrielle\Downloads\Web-Api-Nba-Data-master\api_pam3\obj\Debug\netcoreapp2.1\api_pam3.csprojAssemblyReference.cache
+C:\Users\gabrielle\Downloads\Web-Api-Nba-Data-master\api_pam3\obj\Debug\netcoreapp2.1\api_pam3.csproj.CoreCompileInputs.cache
+C:\Users\gabrielle\Downloads\Web-Api-Nba-Data-master\api_pam3\obj\Debug\netcoreapp2.1\api_pam3.RazorAssemblyInfo.cache
+C:\Users\gabrielle\Downloads\Web-Api-Nba-Data-master\api_pam3\obj\Debug\netcoreapp2.1\api_pam3.RazorAssemblyInfo.cs
+C:\Users\gabrielle\Downloads\Web-Api-Nba-Data-master\api_pam3\obj\Debug\netcoreapp2.1\api_pam3.AssemblyInfoInputs.cache
+C:\Users\gabrielle\Downloads\Web-Api-Nba-Data-master\api_pam3\obj\Debug\netcoreapp2.1\api_pam3.AssemblyInfo.cs
+C:\Users\gabrielle\Downloads\Web-Api-Nba-Data-master\api_pam3\obj\Debug\netcoreapp2.1\api_pam3.RazorTargetAssemblyInfo.cache
+C:\Users\gabrielle\Downloads\Web-Api-Nba-Data-master\api_pam3\obj\Debug\netcoreapp2.1\api_pam3.dll
+C:\Users\gabrielle\Downloads\Web-Api-Nba-Data-master\api_pam3\obj\Debug\netcoreapp2.1\api_pam3.pdb

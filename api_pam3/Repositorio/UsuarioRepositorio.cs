@@ -13,7 +13,7 @@ namespace api_pam3.Repositorio
 
         public long CadastrarUsuario(Usuario usu)
         {
-            MySqlCommand cmd = new MySqlCommand("Insert into Usuario(email_usuario,user_usuario,senha_usuario) Values ( @emailUsuario, @userUsuario, @senhaUsuario)", cn.ConectarBD());
+            MySqlCommand cmd = new MySqlCommand("Insert into usuario (email_usuario,user_usuario,senha_usuario) Values ( @emailUsuario, @userUsuario, @senhaUsuario)", cn.ConectarBD());
             cmd.Parameters.Add("@emailUsuario", MySqlDbType.VarChar).Value = usu.EmailUsuario ;
             cmd.Parameters.Add("@userUsuario", MySqlDbType.VarChar).Value = usu.UserUsuario;
             cmd.Parameters.Add("@senhaUsuario", MySqlDbType.VarChar).Value = usu.SenhaUsuario;
@@ -109,5 +109,32 @@ namespace api_pam3.Repositorio
             return usuario;
         }
 
+        public Usuario ConsultarLogin(Usuario usu)
+        {
+            MySqlCommand cmd = new MySqlCommand("Select * from usuario where user_usuario = @userUsuario and senha_usuario = @senhaUsuario;", cn.ConectarBD());
+
+            cmd.Parameters.Add("@userUsuario", MySqlDbType.VarChar).Value = usu.UserUsuario;
+            cmd.Parameters.Add("@senhaUsuario", MySqlDbType.VarChar).Value = usu.SenhaUsuario;
+
+            cmd.ExecuteNonQuery();
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            Usuario usuario = new Usuario();
+
+            while (reader.Read())
+            {
+                usuario.IdUsuario = reader.GetInt16(reader.GetOrdinal("id_usuario"));
+                usuario.EmailUsuario = reader.GetString(reader.GetOrdinal("email_usuario"));
+                usuario.UserUsuario = reader.GetString(reader.GetOrdinal("user_usuario"));
+                usuario.SenhaUsuario = reader.GetString(reader.GetOrdinal("senha_usuario"));
+            }
+
+            reader.Close();
+
+            cn.DesconectarBD();
+
+            return usuario;
+        }
     }
 }

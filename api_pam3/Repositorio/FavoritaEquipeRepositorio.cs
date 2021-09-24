@@ -13,9 +13,9 @@ namespace api_pam3.Repositorio
 
         public void CadastrarEquipeFavorita(FavoritaEquipe fav)
         {
-            MySqlCommand cmd = new MySqlCommand("Insert into favorita_equipe(id_usuario, id_equipe) Values ( @idUsuario, @idEquipe)", cn.ConectarBD());
+            MySqlCommand cmd = new MySqlCommand("Insert into favorita_equipe(id_usuario, id_equipe) Values ( @idUsuario, @idTeam)", cn.ConectarBD());
             cmd.Parameters.Add("@idUsuario", MySqlDbType.Int16).Value = fav.IdUsuario;
-            cmd.Parameters.Add("@idEquipe", MySqlDbType.Int16).Value = fav.IdEquipe;
+            cmd.Parameters.Add("@idTeam", MySqlDbType.Int16).Value = fav.IdEquipe;
 
             cmd.ExecuteNonQuery();
 
@@ -50,8 +50,8 @@ namespace api_pam3.Repositorio
         public bool ApagarEquipeFavorita(int id)
         {
 
-            MySqlCommand cmd = new MySqlCommand("DELETE FROM favorita_equipe WHERE id_equipe = @id_equipe", cn.ConectarBD());
-            cmd.Parameters.Add("@id_equipe", MySqlDbType.Int16).Value = id;
+            MySqlCommand cmd = new MySqlCommand("DELETE FROM favorita_equipe WHERE id_equipe = @id_team", cn.ConectarBD());
+            cmd.Parameters.Add("@id_team", MySqlDbType.Int16).Value = id;
 
             int deletar = cmd.ExecuteNonQuery();
 

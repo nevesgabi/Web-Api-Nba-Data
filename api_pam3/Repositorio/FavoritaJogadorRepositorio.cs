@@ -13,7 +13,7 @@ namespace api_pam3.Repositorio
 
         public void CadastrarJogadorFavorito(FavoritaJogador fav)
         {
-            MySqlCommand cmd = new MySqlCommand("Insert into favorita_jogador(id_usuario, id_jogador) Values ( @idUsuario, @idJogador)", cn.ConectarBD());
+            MySqlCommand cmd = new MySqlCommand("Insert into favorita_jogador (id_usuario, id_jogador) Values ( @idUsuario, @idJogador)", cn.ConectarBD());
             cmd.Parameters.Add("@idUsuario", MySqlDbType.Int16).Value = fav.IdUsuario;
             cmd.Parameters.Add("@idJogador", MySqlDbType.Int16).Value = fav.IdJogador;
 

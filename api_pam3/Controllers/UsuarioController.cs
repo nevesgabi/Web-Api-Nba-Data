@@ -53,5 +53,13 @@ namespace api_pam3.Controllers
             UsuarioRepositorio usuarioRepositorio = new UsuarioRepositorio();
             return usuarioRepositorio.ConsultarUsuario(id);
         }
+
+        // POST: api/usuario/login
+        [HttpPost("login")]
+        public Usuario LogarUsuario([FromBody] Usuario value)
+        {
+            UsuarioRepositorio usuarioRepositorio = new UsuarioRepositorio();
+            return usuarioRepositorio.ConsultarLogin(value);
+        }
     }
 }

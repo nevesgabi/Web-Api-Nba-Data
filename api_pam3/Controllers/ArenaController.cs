@@ -29,5 +29,13 @@ namespace api_pam3.Controllers
             ArenaRepositorio arenaRepositorio = new ArenaRepositorio();
             return arenaRepositorio.ConsultarArena(id);
         }
+
+        // POST: api/usuario
+        [HttpPost]
+        public long CriarArena([FromBody] Arena value)
+        {
+            ArenaRepositorio arenaRepositorio = new ArenaRepositorio();
+            return arenaRepositorio.CadastrarArena(value);
+        }
     }
 }

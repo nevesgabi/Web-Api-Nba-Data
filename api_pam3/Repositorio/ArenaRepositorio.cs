@@ -8,11 +8,31 @@ using api_pam3.Repositorio;
 
 namespace api_pam3.Repositorio
 {
-    //metodos ConsultarArena e ListarArena
+    //metodos CadastrarArena, ConsultarArena e ListarArena
     public class ArenaRepositorio
     {
         Conexao cn = new Conexao();
         MySqlCommand cmd = new MySqlCommand();
+
+        public long CadastrarArena(Arena are)
+        {
+            MySqlCommand cmd = new MySqlCommand("Insert into arena (nome_arena,cidade_arena,estado_arena, capacidade_arena, id_equipe) Values ( @nomeArena, @cidadeArena, @estadoArena, @capacidadeArena, @idEquipe)", cn.ConectarBD());
+            cmd.Parameters.Add("@nomeArena", MySqlDbType.VarChar).Value = are.NomeArena;
+            cmd.Parameters.Add("@cidadeArena", MySqlDbType.VarChar).Value = are.CidadeArena;
+            cmd.Parameters.Add("@estadoArena", MySqlDbType.VarChar).Value = are.EstadoArena;
+            cmd.Parameters.Add("@capacidadeArena", MySqlDbType.Int32).Value = are.CidadeArena;
+            cmd.Parameters.Add("@id_equipe", MySqlDbType.Int16).Value = are.IdEquipe;
+
+            cmd.Parameters.Add("@idArena", MySqlDbType.Int16, 4).Direction = ParameterDirection.Output;
+
+            cmd.ExecuteNonQuery();
+
+            long id = cmd.LastInsertedId;
+
+            cn.DesconectarBD();
+
+            return id;
+        }
 
         public Arena ConsultarArena(int id)
         {
@@ -27,6 +47,7 @@ namespace api_pam3.Repositorio
 
             while (reader.Read())
             {
+                are.IdArena = reader.GetInt16(reader.GetOrdinal("id_arena"));
                 are.NomeArena = reader.GetString(reader.GetOrdinal("nome_arena"));
                 are.CidadeArena = reader.GetString(reader.GetOrdinal("cidade_arena"));
                 are.EstadoArena = reader.GetString(reader.GetOrdinal("estado_arena"));
@@ -55,6 +76,7 @@ namespace api_pam3.Repositorio
             {
                 Arena ar = new Arena();
 
+                ar.IdArena = reader.GetInt16(reader.GetOrdinal("id_arena"));
                 ar.NomeArena = reader.GetString(reader.GetOrdinal("nome_arena"));
                 ar.CidadeArena = reader.GetString(reader.GetOrdinal("cidade_arena"));
                 ar.EstadoArena = reader.GetString(reader.GetOrdinal("estado_arena"));
